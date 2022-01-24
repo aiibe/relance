@@ -1,3 +1,4 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Entry from "../components/Entry";
 import Header from "../components/Header";
@@ -32,7 +33,7 @@ export default function Home({ data }) {
   );
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const resp = await notion.databases.query({
     database_id: process.env.NOTION_DB_RELANCE,
   });
@@ -42,4 +43,4 @@ export async function getStaticProps() {
       data: resp,
     },
   };
-}
+};

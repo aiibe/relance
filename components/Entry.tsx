@@ -2,7 +2,6 @@ export default function Entry(props) {
   const { properties } = props;
 
   function getPropertyValue(obj) {
-    console.log(obj);
     switch (obj.type) {
       case "select":
         // {id, color, name}
